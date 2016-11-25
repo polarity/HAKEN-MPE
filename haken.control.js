@@ -40,32 +40,9 @@ function sendPitchBendRangeRPN(channel, range) {
   sendChannelController(channel, 6, range)
 }
 
-function sendMacroIfMappedOtherWiseAsMidi(macro, status, data1, data2) {
-  noteInput.sendRawMidiEvent(status, data1, data2)
-}
-
 function onMidi(status, data1, data2) {
   // printMidi(status, data1, data2)
-
-  if (status == 176) {
-    switch (data1) {
-      case 107:
-        sendMacroIfMappedOtherWiseAsMidi(0, status, data1, data2)
-        break
-      case 109:
-        sendMacroIfMappedOtherWiseAsMidi(1, status, data1, data2)
-        break
-      case 111:
-        sendMacroIfMappedOtherWiseAsMidi(2, status, data1, data2)
-        break
-      case 113:
-        sendMacroIfMappedOtherWiseAsMidi(4, status, data1, data2)
-        break
-      case 114:
-        sendMacroIfMappedOtherWiseAsMidi(5, status, data1, data2)
-        break
-    }
-  }
+  noteInput.sendRawMidiEvent(status, data1, data2)  
 }
 
 function exit() {
