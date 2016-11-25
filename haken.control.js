@@ -24,8 +24,8 @@ function init() {
     sendPitchBendRangeRPN(1, pb)
   })
 
-  // Set POLY ON mode with 15 MPE voices
-  sendChannelController(0, 127, 15)
+  // Set POLY ON mode with 8 MPE voices
+  sendChannelController(0, 127, 8)
 
   // Set up pitch bend sensitivity to 48 semitones
   sendPitchBendRangeRPN(1, 48)
