@@ -29,6 +29,8 @@ function init() {
 
   // Set up pitch bend sensitivity to 48 semitones
   sendPitchBendRangeRPN(1, 48)
+  sendPitchBendRangeRPN(2, 48)
+
 
   device = host.createEditorCursorDevice()
 }
